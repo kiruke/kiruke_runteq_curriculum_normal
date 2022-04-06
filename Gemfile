@@ -67,5 +67,6 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'jquery-rails'
 
 gem 'sorcery', '~> 0.14.0'
+gem 'pry-byebug'
 
 
