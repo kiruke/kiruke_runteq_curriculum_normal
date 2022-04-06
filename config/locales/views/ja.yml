@@ -12,6 +12,9 @@ ja:
       #email: 'メールアドレス'
       #password: 'パスワード'
       #password_confirmation: 'パスワード確認'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました。'
   user_sessions:
     new:
       title: 'ログイン'
@@ -19,6 +22,11 @@ ja:
       password_forget: 'パスワードをお忘れの方はこちら'
       #email: 'メールアドレス'
       #password: 'パスワード'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
   boards:
     index:
       title: '掲示板一覧'

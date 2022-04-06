@@ -23,10 +23,10 @@
           <label for="user_password_confirmation"><%= User.human_attribute_name(:password_confirmation)%></label>
           <input class="form-control" type="password" name="user[password_confirmation]" id="user_password_confirmation" />
         </div>
-        <input type="submit" name="commit" value="登録" class="btn btn-primary" data-disable-with="登録" />
+        <input type="submit" name="commit" value="<%=(t 'defaults.register') %>" class="btn btn-primary" data-disable-with="登録" />
       <% end %>
       <div class='text-center'>
-        <%= link_to 'ログインページへ', login_path %>
+        <%= link_to (t '.to_login_page'), login_path %>
       </div>
     </div>
   </div>
