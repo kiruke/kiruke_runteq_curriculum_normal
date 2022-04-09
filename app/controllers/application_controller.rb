@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
 
   private
     def login_required
-      redirect_to login_url unless current_user
-      flash[:warning] = t('defaults.require_login')
+      redirect_to login_url ,warning: t('defaults.require_login') unless current_user
+      #2行目に書くと、unlessが読み込まれない
+      #flash[:warning] = t('defaults.require_login')
     end
 end
