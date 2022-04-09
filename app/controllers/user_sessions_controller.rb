@@ -8,17 +8,17 @@ class UserSessionsController < ApplicationController
     if @user
       #もともと書いてたredirect_to動きが理解出来ていなかった
       #redirect_to root_url
-      flash[:success] = 'ログインに成功しました。'
+      flash[:success] = t('.success')
       redirect_back_or_to boards_url
     else
-      flash.now[:danger] = 'ログインに失敗しました。'
+      flash.now[:danger] = t('.fail')
       render action: 'new'
     end
   end
 
   def destroy
     reset_session
-    flash[:success] = 'ログアウトしました。'
+    flash[:destroy] = t('.success')
     redirect_to root_url
   end
 end
