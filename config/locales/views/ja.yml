@@ -4,6 +4,9 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     require_login: 'ログインしてください'
+  time:
+    formats:
+      default: '%Y/%m/%d %H:%M'
   users:
     new:
       title: 'ユーザ一登録'
