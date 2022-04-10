@@ -12,7 +12,11 @@
   <!-- 掲示板一覧 -->
   <div class="container">
     <div class="row">
+    <% if @boards.present? %>
       <%= render partial: 'board', collection: @boards %>
+    <% else %>
+      <p><%= t('.no_result') %></p>
+    <% end %>
     </div>
   </div>   
 </div>
