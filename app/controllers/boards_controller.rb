@@ -3,7 +3,13 @@ class BoardsController < ApplicationController
     @boards = Board.all.includes(:user).order(created_at: :desc)
   end
 
+  def new
+    @board = Board.new
+  end
 
+  def create
+    @board = Boar.new(board_params)
+  end
 
   private
 
