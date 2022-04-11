@@ -3,7 +3,11 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
-    require_login: 'ログインしてください'
+    #require_login: 'ログインしてください'
+    message:
+      require_login: 'ログインしてください'
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
   time:
     formats:
       default: '%Y/%m/%d %H:%M'
