@@ -13,6 +13,7 @@ class BoardsController < ApplicationController
       flash[:success] = t('.success')
       redirect_back_or_to boards_url
     else
+      #binding.pry
       flash.now[:danger] = t('.fail')
       render :new
     end
