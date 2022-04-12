@@ -14,9 +14,10 @@ class BoardsController < ApplicationController
       redirect_back_or_to boards_url
     else
       flash.now[:danger] = t('.fail')
-      render action: 'new'
+      render :new
     end
   end
+
 
   private
 
