@@ -1,4 +1,6 @@
 class BoardsController < ApplicationController
+  mount_uploader :board_image, Board_ImageUploarder
+  
   def index
     @boards = Board.all.includes(:user).order(created_at: :desc)
   end
@@ -23,6 +25,6 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :body)
+    params.require(:board).permit(:title, :body, :board_image)
   end
 end
