@@ -8,5 +8,9 @@
     <%= f.label :body, '本文' %>
     <%= f.text_area :body, size: "10", style: "height: 200px",  class: 'form-control' %>
   </div>
+  <div class='field'>
+    <%= f.label :board_image, 'サムネイル' %>
+    <%= f.file_field :board_image %>
+  </div>
   <%= f.submit '作成', class: 'btn btn-primary' %>
 <% end %>
