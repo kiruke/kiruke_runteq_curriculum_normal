@@ -1,7 +1,7 @@
 class BoardImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  #include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -20,6 +20,9 @@ class BoardImageUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
+  def default_url
+    'board_placeholder.png'
+  end
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
@@ -32,13 +35,13 @@ class BoardImageUploader < CarrierWave::Uploader::Base
   #version :thumb do
     #process resize_to_fit: [300, 200]
   #end
-  #process resize_to_fit: [300, 200]
+  process resize_to_fit: [300, 200]
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  # def extension_allowlist
-  #   %w(jpg jpeg gif png)
-  # end
+  def extension_allowlist
+    %w(jpg jpeg gif png)
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

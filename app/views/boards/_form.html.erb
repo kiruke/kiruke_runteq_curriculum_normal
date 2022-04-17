@@ -1,16 +1,26 @@
 <%= form_with model: @board, local: true do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
-    <%= f.label :title, 'タイトル' %>
+    <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :body, '本文' %>
+    <%= f.label :body %>
     <%= f.text_area :body, size: "10", style: "height: 200px",  class: 'form-control' %>
   </div>
-  <div class='field'>
-    <%= f.label :board_image, 'サムネイル' %>
-    <%= f.file_field :board_image %>
+  <div class='form-group'>
+    <%= f.label :board_image %>
+    <%# acceptでファイルの種類を指定。image/*は画像ファイル全般%>
+    <%= f.file_field :board_image, class: 'form-control mb-3', accept: 'image/*' %>
+    <%= f.hidden_field :board_image_cache %>
+  <div class='mt-3 mb-3'>
+    <%= image_tag board.board_image.url,
+                  id: 'preview',
+                  size: '300x200' %>
   </div>
-  <%= f.submit '作成', class: 'btn btn-primary' %>
+
+  <%= f.submit class: 'btn btn-primary' %>
+  <%#掲示板画像プレビューする場合に使用する>
+  <%# f.file_field :board_image, onchange: 'previewImage()', class: 'form-control mb-3', accept: 'image/*' %>
+  <%# image_tag board.board_image.url, class: 'rounded-circle', id: 'preview', size: '100x100' %>
 <% end %>
