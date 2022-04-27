@@ -44,6 +44,8 @@ ja:
     create:
       success: '掲示板を作成しました'
       fail: '掲示板を作成できませんでした'
+    show:
+      body: 'コメント'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
