@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   post '/login', to: 'user_sessions#create'
   delete '/logout', to:  'user_sessions#destroy'
   resources :users, only: [:new, :create]
-  resources :boards, only: [:index, :new, :create] do
-    resources :comments
+  resources :boards, only: [:index, :new, :create, :show] do
+    resources :comments, shallow: true
   end
   
   
