@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
 
   def index
+    #includesでN+1問題を解決
     @boards = Board.all.includes(:user).order(created_at: :desc)
   end
 
@@ -17,6 +18,12 @@ class BoardsController < ApplicationController
       flash.now[:danger] = t('.fail')
       render :new
     end
+  end
+
+  def show
+    @board = Board.find(params[:id])
+    @comment = Comment.new
+    @comments = @board.comments.includes(:user).order(created_at: :desc)
   end
 
 
