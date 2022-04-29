@@ -28,14 +28,14 @@ ja:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
-      #email: 'メールアドレス'
-      #password: 'パスワード'
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
   boards:
+    show:
+      title: '掲示板詳細'
     index:
       title: '掲示板一覧'
       no_result: '掲示板がありません'
