@@ -8,7 +8,8 @@
     <% end %>
       <div class="card-body">
         <h4 class="card-title">
-          <%= link_to board.title, board_path(board.id) %>
+          <%# link_to board.title, board_path(board.id) %>
+          <%= link_to board.title, board_path(board) %>
         </h4>
         <div class='mr10 float-right'>
           <%= link_to '#', id: 'button-edit-#{board.id}' do %>
