@@ -11,4 +11,9 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
+
+  #コメントの編集・削除ボタン表示の判定ロジック
+  def own?(object)
+    id == object.user_id
+  end
 end
