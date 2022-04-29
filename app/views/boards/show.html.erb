@@ -26,5 +26,6 @@
   <!-- コメントフォーム -->
   <%= render 'comments/form', {board: @board, comment: @comment} %>
   <!-- コメントエリア -->
-  <%= render partial: 'comments/comment', collection: @comments %>
+  <%# render partial: 'comments/comment', collection: @comments %>
+  <%= render partial: 'comments/comments', locals: { comments: @comments } %>
 </div>
