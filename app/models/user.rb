@@ -12,8 +12,15 @@ class User < ApplicationRecord
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
 
+
   #コメントの編集・削除ボタン表示の判定ロジック
-  def own?(object)
-    id == object.user_id
+  def my_comment?(comment)
+    comment.user_id == id
+    # comment.user_id == self.id の省略形
   end
+
+  #汎用的に書くなら
+  #def own?(object)
+    #id == object.user_id
+  #end
 end

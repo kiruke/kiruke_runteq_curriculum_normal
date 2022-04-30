@@ -3,6 +3,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    post: '投稿'
     #require_login: 'ログインしてください'
     message:
       require_login: 'ログインしてください'
@@ -44,8 +45,6 @@ ja:
     create:
       success: '掲示板を作成しました'
       fail: '掲示板を作成できませんでした'
-    show:
-      body: 'コメント'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
