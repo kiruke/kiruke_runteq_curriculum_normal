@@ -15,11 +15,11 @@ class User < ApplicationRecord
 
   #コメントの編集・削除ボタン表示の判定ロジック
   def my_comment?(comment)
-    comment.user_id == id
+    comment.user_id == self.id
     # comment.user_id == self.id の省略形
   end
 
-  #汎用的に書くなら
+  #汎用的に書くなら以下。Userモデルに定義することで current_user.own?(@object)と共通化できる。
   #def own?(object)
     #id == object.user_id
   #end
