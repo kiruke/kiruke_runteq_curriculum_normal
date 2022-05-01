@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
@@ -5,6 +6,7 @@
       <%= form_with model: @user, local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
+        <%= f.label :last_name %>
           <label for="user_last_name"><%= User.human_attribute_name(:last_name) %></label>
           <input class="form-control" type="text" name="user[last_name]" id="user_last_name" />
         </div>

@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   #コメントの編集・削除ボタン表示の判定ロジック
   def my_comment?(comment)
-    comment.user_id == self.id
+    comment.user_id == id
     # comment.user_id == self.id の省略形
   end
 
