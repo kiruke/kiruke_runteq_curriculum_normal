@@ -11,7 +11,9 @@
           <%# link_to board.title, board_path(board.id) %>
           <%= link_to board.title, board_path(board) %>
         </h4>
+          <% if board.user_id == current_user.id %>
           <%= render 'crud_menus', board: board %>
+          <% end %>
         <ul class="list-inline">
           <li class="list-inline-item"><i class="far fa-user"></i><%= board.user.decorate.full_name %></li>
           <li class="list-inline-item"><i class="far fa-calendar"></i><%= l board.user.created_at %></li>
