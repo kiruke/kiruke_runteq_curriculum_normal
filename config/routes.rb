@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/login', to: 'user_sessions#create'
   delete '/logout', to:  'user_sessions#destroy'
   resources :users, only: [:new, :create]
+  resources :bookmarks, only: [:create, :destroy]
   resources :boards do
     get 'bookmarks', on: :collection
     resources :comments, shallow: true
