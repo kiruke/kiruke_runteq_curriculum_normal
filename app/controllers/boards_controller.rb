@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_params, only: [:edit, :update, :destroy]
+  before_action :set_board, only: [:edit, :update, :destroy]
 
   def index
     #includesでN+1問題を解決
@@ -28,10 +28,12 @@ class BoardsController < ApplicationController
   end
 
   def edit
+    #before_action
     #@board = current_user.boards.find(params[:id])
   end
 
   def update
+    #before_action
     #@board = current_user.boards.find(params[:id])
     if @board.update(board_params)
       redirect_to @board, success: t('defaults.message.updated', item: Board.model_name.human)
@@ -42,9 +44,14 @@ class BoardsController < ApplicationController
   end
 
   def destroy
+    #before_action
     #@board = current_user.boards.find(params[:id])
     @board.destroy!
     redirect_to boards_url, success: t('defaults.message.deleted', item: Board.model_name.human)
+  end
+
+  def bookmarks
+    @bookmark_board = current_user.bookmark_board.all.includes(:user).order(created_at: :desc)
   end
 
 
