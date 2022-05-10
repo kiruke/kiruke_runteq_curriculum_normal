@@ -8,9 +8,10 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    byebug
     bookmark = current_user.bookmarks.find(params[:id])
     bookmark.destroy!
+    #redirect_back fallback_location: boards_path
+    redirect_to request.referer
   end
-
+  
 end

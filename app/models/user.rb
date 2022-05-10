@@ -3,7 +3,8 @@ class User < ApplicationRecord
 
   has_many :boards, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :bookmarks, through: :board
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_boards, through: :bookmarks, source: :board
   
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -22,6 +23,6 @@ class User < ApplicationRecord
 
   #汎用的に書くなら以下。Userモデルに定義することで current_user.own?(@object)と共通化できる。
   def own?(object)
-    #id == object.user_id
+    id == object.user_id
   end
 end
