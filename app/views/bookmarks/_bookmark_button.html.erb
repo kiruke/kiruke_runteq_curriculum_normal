@@ -1,0 +1,9 @@
+<%# 自身のブックマークの状況によって☆ボタンに色がついているかの分岐が記載させたファイル %>
+<% if board.bookmarked_by?(current_user) %>
+<%# クリックすると、bookmark#create(ブックマークの新規作成) アクションへと遷移 %>
+<%= render 'bookmarks/unbookmark' , board: board %>
+<% else %>
+<%# 既にブックマークが作成されている場合 = 塗りつぶし有りのスターを表示。%>
+<%# クリックすると、bookmark#destroy(ブックマーク削除)アクションへと遷移 %>
+<%= render 'bookmarks/bookmark' , board: board %>
+<% end %>

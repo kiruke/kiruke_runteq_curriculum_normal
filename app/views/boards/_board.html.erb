@@ -13,10 +13,14 @@
         </h4>
           <% if board.user_id == current_user.id %>
           <%= render 'crud_menus', board: board %>
+          <% else %>
+          <%= render 'bookmarks/bookmark_button', board: board %>
           <% end %>
         <ul class="list-inline">
           <li class="list-inline-item"><i class="far fa-user"></i><%= board.user.decorate.full_name %></li>
           <li class="list-inline-item"><i class="far fa-calendar"></i><%= l board.user.created_at %></li>
+          <%# render 'bookmarks/unbookmark', board: board %>
+          
         </ul>
         <p class="card-text"><%= board.body %></p>
       </div>

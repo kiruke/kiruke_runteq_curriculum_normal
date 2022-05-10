@@ -1,0 +1,9 @@
+  <div class="container">
+    <div class="row">
+    <% if @bookmarks.present? %>
+      <%= render partial: 'board', collection: @bookmarks %>
+    <% else %>
+      <p><%= t('.no_result') %></p>
+    <% end %>
+    </div>
+  </div>
