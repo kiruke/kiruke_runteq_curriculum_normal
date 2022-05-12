@@ -1,5 +1,6 @@
 <%# 自身のブックマークの状況によって☆ボタンに色がついているかの分岐が記載させたファイル %>
 <% if board.bookmarked_by?(current_user) %>
+<%#解答例 if current_user.bookmark?(board) %>
 <%# クリックすると、bookmark#create(ブックマークの新規作成) アクションへと遷移 %>
 <%= render 'bookmarks/unbookmark' , board: board %>
 <% else %>

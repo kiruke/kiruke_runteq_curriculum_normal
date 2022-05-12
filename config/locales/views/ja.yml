@@ -56,6 +56,12 @@ ja:
       fail: '掲示板を更新できませんでした'
     bookmarks:
       title: 'ブックマーク一覧'
+      no_result: 'ブックマークがありません'
+  bookmarks:
+    create:
+      success: 'ブックマークしました'  
+    destroy:
+      success: 'ブックマークを外しました'
   profiles:
     show:
       title: 'プロフィール'

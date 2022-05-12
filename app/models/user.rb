@@ -25,4 +25,18 @@ class User < ApplicationRecord
   def own?(object)
     id == object.user_id
   end
+  #bookmarkに配列で値を入れている
+  def bookmark(board)
+    self.bookmark_boards << board
+  end
+
+  #bookmarkを外す
+  def unbookmark(board)
+    bookmark_boards.destroy(board)
+  end
+  #bookmarkをつける
+  def bookmark?(board)
+    bookmark_boards.include?(board)
+  end
+
 end
