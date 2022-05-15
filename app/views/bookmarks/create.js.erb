@@ -1,3 +1,2 @@
-//$("#js-bookmark-button-for-board-#{board.id}").html('<%= j(render partial: 'bookmarks/bookmark', locals: { board: @board }) %>');
 $("#js-bookmark-button-for-board-<%= @board.id %>").html('<%= j(render partial: 'bookmarks/unbookmark', locals: { board: @board }) %>');
 
