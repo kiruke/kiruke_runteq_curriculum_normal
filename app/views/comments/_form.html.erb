@@ -1,7 +1,7 @@
   <!-- コメントフォーム -->
 <div class="row mb-3">
   <div class="col-lg-8 offset-lg-2">
-  <%= form_with model: comment, url: [board, comment] do |f| %>
+  <%= form_with model: comment, url: [board, comment], id: "js-comment-#{comment.id}" do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control mb-3', row: 4 %>
