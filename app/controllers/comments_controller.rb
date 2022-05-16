@@ -2,15 +2,22 @@ class CommentsController < ApplicationController
 
   def create
     #@comment= current_user.comments.build(comment_params)
-    comment = current_user.comments.build(comment_params)
+    @comment = current_user.comments.build(comment_params)
     #@comment.save
-    if comment.save
+    @comment.save
+      #
       #redirect_back(fallback_location: boards_path)
-      redirect_to board_path(comment.board), success: t('defaults.message.created', item: Comment.model_name.human)
-    else
+      #redirect_to board_path(comment.board), success: t('defaults.message.created', item: Comment.model_name.human)
       #redirect_back(fallback_location: boards_path)
-      redirect_to board_path(comment.board), danger: t('defaults.message.not_created', item: Comment.model_name.human)
-    end
+      #redirect_to board_path(comment.board), danger: t('defaults.message.not_created', item: Comment.model_name.human)
+  end
+
+  def destroy
+    
+  end
+
+  def edit
+
   end
 
 
