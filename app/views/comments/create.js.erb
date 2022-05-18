@@ -1,2 +1,7 @@
-$("#js-table-comment").prepend("<%= j(render 'comments/comment', comment: @comment) %>");
-$("textarea").val('');
+$("#error_messages").html('');
+<% if @comment.errors.present? %>
+  $("#error_messages").html("<%= j(render 'shared/error_messages', { object: @comment }) %>");
+<% else %>
+  $("#js-table-comment").prepend("<%= j(render 'comments/comment', comment: @comment) %>");
+  $("textarea").val('');
+<% end %>
