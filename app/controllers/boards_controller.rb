@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
 
   def index
     #includesでN+1問題を解決
-    @boards = Board.all.includes(:user).order(created_at: :desc)
+    @boards = Board.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -52,7 +52,7 @@ class BoardsController < ApplicationController
 
   def bookmarks
     #@bookmarks = current_user.bookmark_boards
-    @bookmarks = current_user.bookmark_boards.includes(:user).order(created_at: :desc)
+    @bookmarks = current_user.bookmark_boards.includes(:user).order(created_at: :desc).page(params[:page])
     #@bookmarks = Bookmark.where(user_id: current_user.id)
   end
 
