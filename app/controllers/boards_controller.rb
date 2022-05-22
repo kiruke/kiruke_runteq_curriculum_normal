@@ -2,8 +2,9 @@ class BoardsController < ApplicationController
   before_action :set_board, only: [:edit, :update, :destroy]
 
   def index
-    #includesでN+1問題を解決
-    @boards = Board.all.includes(:user).order(created_at: :desc).page(params[:page])
+    #検索機能の追加
+    @q = Board.ransack(params[:q])
+    @boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :bookmarks, only: [:create, :destroy]
   resources :boards do
-    get 'bookmarks', on: :collection
+    get 'bookmarks', 'serach' , on: :collection
     resources :comments, shallow: true
   end
   
