@@ -1,11 +1,8 @@
   <div class="container">
     <div class="row">
-        <%= search_form_for @q do |f| %>
-        <!--  bodyカラムに対して部分一致検索 -->
-          <%= f.label :title_or_body_cont, "検索ワードを入力してください", class: "input-group mb-3"%>
-          <%= f.search_field :title_or_body_cont %>
-          <%= f.submit "検索", class: "input-group-append" %>
-        <% end %>
+      <div class="col-lg-10 offset-lg-1">
+        <%= render 'boards/search_form', url: bookmarks_boards_path %>
+      </div>
     <% if @bookmarks.present? %>
       <%= render partial: 'board', collection: @bookmarks %>
     <% else %>
