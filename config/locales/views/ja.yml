@@ -2,6 +2,7 @@ ja:
   defaults:
     login: 'ログイン'
     register: '登録'
+    update: '更新'
     logout: 'ログアウト'
     post: '投稿'
     search_word: '検索ワード'
@@ -21,11 +22,6 @@ ja:
     new:
       title: 'ユーザ一登録'
       to_login_page: 'ログインページへ'
-      #last_name: '性'
-      #first_name: '名'
-      #email: 'メールアドレス'
-      #password: 'パスワード'
-      #password_confirmation: 'パスワード確認'
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました。'
@@ -66,3 +62,5 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'

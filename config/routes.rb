@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete '/logout', to:  'user_sessions#destroy'
   resources :users, only: [:new, :create]
   resources :bookmarks, only: [:create, :destroy]
+  resource :profiles, only: [:show, :edit, :update]
   resources :boards do
     get 'bookmarks', 'serach' , on: :collection
     resources :comments, shallow: true
