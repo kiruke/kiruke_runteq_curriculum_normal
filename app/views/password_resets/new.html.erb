@@ -1,0 +1,9 @@
+<div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+<%= form_with url: password_resets_path, method: :post, local: true do |f| %>
+    <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+    </div>
+    <%= f.submit '送信', class: 'btn btn-primary' %>
+<% end %>
+</div>
