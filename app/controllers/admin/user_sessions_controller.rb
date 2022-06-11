@@ -1,12 +1,10 @@
 class Admin::UserSessionsController < Admin::BaseController
   skip_before_action :require_login, only: %i[new create]
-  skip_before_action :admin_check
+  skip_before_action :admin_check, only: %i[new create]
 
   layout 'admin/layouts/login'
 
-  def new
-    @user = User.new
-  end
+  def new; end
 
   def create
     @user = login(params[:email], params[:password])
