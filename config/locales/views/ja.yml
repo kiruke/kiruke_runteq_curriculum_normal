@@ -16,6 +16,15 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: '削除しますか？'
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
   time:
     formats:
       default: '%Y/%m/%d %H:%M'
