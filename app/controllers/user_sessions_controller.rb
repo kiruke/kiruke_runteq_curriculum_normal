@@ -19,7 +19,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    reset_session
+    logout
     flash[:success] = t('.success')
     redirect_to root_url
   end

@@ -18,7 +18,7 @@ class Admin::UserSessionsController < Admin::BaseController
   end
 
   def destroy
-    reset_session
+    logout
     flash[:success] = t('.success')
     redirect_to admin_login_path
   end
