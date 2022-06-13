@@ -15,5 +15,6 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
-//= require_tree .
 //= require data-confirm-modal
+//= require cable.js
+//= require common.js
