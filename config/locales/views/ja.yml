@@ -8,6 +8,7 @@ ja:
     search_word: '検索ワード'
     password_reset: 'パスワードリセット'
     require_login: 'ログインしてください'
+    not_authorized: '権限がありません'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -25,6 +26,9 @@ ja:
         fail: 'ログインに失敗しました'
       destroy:
         success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
   time:
     formats:
       default: '%Y/%m/%d %H:%M'

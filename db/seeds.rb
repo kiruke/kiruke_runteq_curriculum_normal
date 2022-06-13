@@ -4,7 +4,8 @@
       last_name: Faker::Name.last_name,
       email: Faker::Internet.email,
       password: 'hogehoge',
-      password_confirmation: 'hogehoge'
+      password_confirmation: 'hogehoge',
+      role: 'general'
   )
 end
 
