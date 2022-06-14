@@ -12,12 +12,14 @@ Rails.application.routes.draw do
     get 'bookmarks', 'serach' , on: :collection
     resources :comments, shallow: true
   end
+  
   namespace :admin do
     root 'dashboards#index'
     get '/login', to: 'user_sessions#new'
     post '/login', to: 'user_sessions#create'
     delete '/logout', to:  'user_sessions#destroy'
     resources :users, only: [:index, :show, :edit, :update, :destroy]
+    resources :boards, only: [:index, :show, :edit, :update, :destroy]
   end
   
   
