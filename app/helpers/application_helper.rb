@@ -14,4 +14,8 @@ module ApplicationHelper
     #page_title.empty? ? base_title : page_title + ' | ' + base_title
   #end
 
+  def active?(controller_name)
+    return 'active' if controller_name == params[:controller]
+  end
+
 end
