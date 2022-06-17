@@ -6,7 +6,11 @@ ja:
     logout: 'ログアウト'
     post: '投稿'
     search_word: '検索ワード'
+    show: '詳細'
+    edit: '編集'
+    delete: '削除'
     password_reset: 'パスワードリセット'
+    unspecified: '指定なし'
     require_login: 'ログインしてください'
     not_authorized: '権限がありません'
     message:
@@ -29,6 +33,20 @@ ja:
     dashboards:
       index:
         title: 'ダッシュボード'
+    users:
+      index:
+        title: 'ユーザ一覧'
+      edit:
+        title: 'ユーザ編集'
+      show:
+        title: 'ユーザ詳細'
+    boards:
+      index:
+        title: '掲示板一覧'
+      edit:
+        title: '掲示板編集'
+      show:
+        title: '掲示板詳細'
   time:
     formats:
       default: '%Y/%m/%d %H:%M'

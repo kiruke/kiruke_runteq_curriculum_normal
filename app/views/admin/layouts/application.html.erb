@@ -6,16 +6,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'admin', media: 'all' %>
-    <%= javascript_include_tag 'admin' %>
   </head>
 
   <body>
     <%= render 'admin/shared/header' %>
+    <%= render 'admin/shared/sidebar' %>
   <div class="content-wrapper">
     <%= render 'shared/flash_message' %>
     <%= yield %>
   </div>
+    <%= javascript_include_tag 'admin' %>
     <%= render 'admin/shared/footer' %>
-    <%= render 'admin/shared/sidebar' %>
   </body>
 </html>
